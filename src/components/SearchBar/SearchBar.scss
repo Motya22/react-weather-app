@@ -1,0 +1,21 @@
+.form {
+  input {
+    font-size: 14px;
+    line-height: 17px;
+    height: 44px;
+    color: #fff;
+    background-color: rgba(76, 82, 85, 0.4);
+    border: 1px solid rgba(228, 227, 227, 0.2);
+    border-radius: 5px 0 0 5px;
+    padding: 13px 58px 13px 15px;
+    outline: none;
+
+    &::-webkit-input-placeholder {
+      color: #fff;
+    }
+  }
+
+  .button {
+    border-radius: 0 5px 5px 0;
+  }
+}

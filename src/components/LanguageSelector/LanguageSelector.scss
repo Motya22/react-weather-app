@@ -1,0 +1,25 @@
+.select {
+  position: relative;
+
+  select {
+    display: block;
+    width: 100%;
+    padding: 13px 35px 14px 15px;
+    background: #aeb5b980 url(../../assets/icons/down-arrow.svg)
+      calc(100% - 15px) 50% no-repeat;
+    border-radius: 5px;
+    appearance: none;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: calc(17 / 14 * 100%);
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+
+    option {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+}
