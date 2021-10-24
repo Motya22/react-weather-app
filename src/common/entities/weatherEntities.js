@@ -73,8 +73,7 @@ export class OtherDaysWeatherItem {
   }
 
   get isAdvanced() {
-    // eslint-disable-next-line no-prototype-builtins
-    return this.hasOwnProperty('humidity');
+    return Object.prototype.hasOwnProperty.call(this, 'humidity');
   }
 }
 

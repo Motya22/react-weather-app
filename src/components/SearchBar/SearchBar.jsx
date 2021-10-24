@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
-import { fetchFullWeather } from '../../actions/weatherActions';
+import { fetchFullWeather, clearError } from '../../actions/weatherActions';
 import Button from '../Button/Button';
 import './SearchBar.scss';
 
@@ -18,6 +18,7 @@ const SearchBar = ({ className }) => {
 
     if (cityName.trim()) {
       dispatch(fetchFullWeather({ cityName }));
+      dispatch(clearError());
       setCityName('');
     }
   };

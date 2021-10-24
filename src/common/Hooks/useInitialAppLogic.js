@@ -24,11 +24,6 @@ export const useInitialAppLogic = (currentDayWeather, fetchFullWeather) => {
     new Date().getHours() + 1,
   );
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const getHourlyWeather = (hour) => (
-    currentDayWeather.find((weatherForHour) => weatherForHour.timestamp.includes(hour))
-  );
-
   useEffect(() => {
     if (latitude && longitude) {
       fetchFullWeather({ latitude, longitude });
@@ -36,10 +31,14 @@ export const useInitialAppLogic = (currentDayWeather, fetchFullWeather) => {
   }, [latitude, longitude, fetchFullWeather]);
 
   useEffect(() => {
+    const getHourlyWeather = (hour) => (
+      currentDayWeather.find((weatherForHour) => weatherForHour.timestamp.includes(hour))
+    );
+
     const newHourlyWeather = getHourlyWeather(timeForCurrentDayWeather);
 
     setHourlyWeather(newHourlyWeather);
-  }, [currentDayWeather, timeForCurrentDayWeather, getHourlyWeather]);
+  }, [currentDayWeather, timeForCurrentDayWeather]);
 
   useEffect(() => {
     refreshBGImage();

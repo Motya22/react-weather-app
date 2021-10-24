@@ -18,7 +18,6 @@ class Converter {
     return otherDaysWeatherData;
   }
 
-  // eslint-disable-next-line camelcase
   getCurrentDayWeather({ data, city_name, lon, lat }) {
     const currentDayWeatherData = data.map(
       (weatherItem) => new CurrentDayWeatherItem({
@@ -35,7 +34,7 @@ class Converter {
 
     return {
       currentDayWeatherData,
-      city_name,
+      cityName: city_name,
       lon: lon.toString(),
       lat: lat.toString(),
     };

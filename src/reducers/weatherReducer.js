@@ -3,13 +3,13 @@ import {
   FETCH_OTHER_DAYS_WEATHER,
   SHOW_ERROR,
   FINISH_LOADING,
+  CLEAR_ERROR,
 } from '../actions/weatherActions';
 
 const initialState = {
   isLoaded: false,
   error: null,
-  city_name: '',
-  country_code: '',
+  cityName: '',
   lat: '',
   lon: '',
   currentDayWeather: [],
@@ -21,8 +21,7 @@ export const weatherReducer = (state = initialState, action) => {
     case FETCH_CURRENT_DAY_WEATHER:
       return {
         ...state,
-        city_name: action.payload.city_name,
-        country_code: action.payload.country_code,
+        cityName: action.payload.cityName,
         lat: action.payload.lat,
         lon: action.payload.lon,
         currentDayWeather: action.payload.currentDayWeatherData,
@@ -36,6 +35,8 @@ export const weatherReducer = (state = initialState, action) => {
       return { ...state, error: action.payload };
     case FINISH_LOADING:
       return { ...state, isLoaded: true };
+    case CLEAR_ERROR:
+      return { ...state, error: null };
 
     default:
       return state;

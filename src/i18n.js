@@ -1,12 +1,11 @@
-/* eslint-disable camelcase */
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import common_en from './common/locales/en/translation.json';
-import common_ru from './common/locales/ru/translation.json';
+import commonEN from './common/locales/en/translation.json';
+import commonRU from './common/locales/ru/translation.json';
 
 const resources = {
-  en: { translation: common_en },
-  ru: { translation: common_ru },
+  en: { translation: commonEN },
+  ru: { translation: commonRU },
 };
 
 i18n.use(initReactI18next).init({

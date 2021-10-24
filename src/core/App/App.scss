@@ -1,5 +1,5 @@
 .header {
-  margin-bottom: 57px;
+  margin-bottom: 25px;
 
   &__container {
     min-height: 84px;
@@ -39,7 +39,7 @@
 }
 
 .weather-block {
-  padding: 0 0 96px;
+  padding: 0 0 15px;
 
   &__container {
     position: relative;
@@ -53,9 +53,11 @@
   }
 
   &__subtitle {
+    display: flex;
+    justify-content: space-between;
     font-size: 20px;
     line-height: calc(29 / 20 * 100%);
-    margin-bottom: 80px;
+    margin-bottom: 5px;
   }
 
   &__content {
@@ -81,8 +83,8 @@
 
   .location {
     &__map {
-      width: 365px;
-      height: 388px;
+      width: 315px;
+      height: 338px;
       margin-bottom: 8px;
       border-radius: 25px;
       overflow: hidden;

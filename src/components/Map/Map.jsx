@@ -14,7 +14,6 @@ const Map = () => {
   const [lng, setLng] = useState('');
   const [lat, setLat] = useState('');
   const currentLanguage = localStorage.getItem('language') || 'en';
-  const mapLanguage = new MapboxLanguage({ defaultLanguage: currentLanguage });
 
   useEffect(() => {
     map.current = new mapboxgl.Map({
@@ -24,13 +23,14 @@ const Map = () => {
       zoom: 10,
     });
 
+    const mapLanguage = new MapboxLanguage({ defaultLanguage: currentLanguage });
+
     map.current.addControl(mapLanguage);
 
-    // eslint-disable-next-line no-unused-vars
-    const marker = new mapboxgl.Marker()
+    new mapboxgl.Marker()
       .setLngLat([lng, lat])
       .addTo(map.current);
-  }, [lng, lat, currentLanguage, mapLanguage]);
+  }, [lng, lat, currentLanguage]);
 
   useEffect(() => {
     setLng(currentLng);

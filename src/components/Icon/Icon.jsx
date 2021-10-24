@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { ReactComponent as RefreshBgIcon } from '../../assets/icons/refresh.svg';
-import { ReactComponent as MicrophoneIcon } from '../../assets/icons/microphone.svg';
 import { ReactComponent as ThunderstormRainIcon } from '../../assets/icons/weather/tstorm.svg';
 import { ReactComponent as ThunderstormDrizzleIcon } from '../../assets/icons/weather/tstormdrizzle.svg';
 import { ReactComponent as FlurriesDayIcon } from '../../assets/icons/weather/flurriesd.svg';
@@ -28,7 +27,6 @@ import { ReactComponent as DefaultWeatherIcon } from '../../assets/icons/weather
 
 let TypeToIconMap = {
   refreshBg: <RefreshBgIcon />,
-  microphone: <MicrophoneIcon />,
   thunderstormRain: <ThunderstormRainIcon />,
   thunderstormDrizzle: <ThunderstormDrizzleIcon />,
   flurriesDay: <FlurriesDayIcon />,

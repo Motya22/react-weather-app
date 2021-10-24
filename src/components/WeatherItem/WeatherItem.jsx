@@ -63,8 +63,32 @@ const WeatherItem = ({ className, weatherInfo }) => {
   ) : null;
 };
 
-WeatherItem.propTypes = { className: PropTypes.string, weatherInfo: PropTypes.objectOf(PropTypes.string) };
+WeatherItem.propTypes = {
+  className: PropTypes.string,
+  weatherInfo: PropTypes.shape({
+    iconType: PropTypes.string,
+    temperature: PropTypes.number,
+    stringDate: PropTypes.string,
+    humidity: PropTypes.number,
+    windSpeed: PropTypes.number,
+    description: PropTypes.string,
+    feelsLike: PropTypes.number,
+    isAdvanced: PropTypes.bool,
+  }),
+};
 
-WeatherItem.defaultProps = { className: '', weatherInfo: {} };
+WeatherItem.defaultProps = {
+  className: '',
+  weatherInfo: {
+    iconType: '',
+    temperature: 1,
+    stringDate: '',
+    humidity: 1,
+    windSpeed: 1,
+    description: '',
+    feelsLike: 1,
+    isAdvanced: false,
+  },
+};
 
 export default WeatherItem;

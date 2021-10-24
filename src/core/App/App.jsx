@@ -66,6 +66,9 @@ function App({
                 </h2>
                 <div className='weather-block__subtitle'>
                   <DateAndTime />
+                  {errorMessage
+                    ? <span style={{ color: 'red', position: 'relative' }}>Error: {errorMessage}</span>
+                    : null}
                 </div>
                 <div className='weather-block__content content'>
                   <div className='content__forecast forecast'>
@@ -104,13 +107,6 @@ function App({
           <Loader />
         )}
       </ErrorBoundary>
-      {errorMessage ? (
-        <div
-          style={{ color: 'red', textAlign: 'center', position: 'relative' }}
-        >
-          <span>Error: {errorMessage}</span>
-        </div>
-      ) : null}
     </div>
   );
 }

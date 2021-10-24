@@ -1,10 +1,10 @@
-/* eslint-disable no-unused-expressions */
 import WeatherApi from '../api/weatherApi/provider';
 
 export const FETCH_CURRENT_DAY_WEATHER = 'FETCH_CURRENT_DAY_WEATHER';
 export const FETCH_OTHER_DAYS_WEATHER = 'FETCH_OTHER_DAYS_WEATHER';
 export const SHOW_ERROR = 'SHOW_ERROR';
 export const FINISH_LOADING = 'FINISH_LOADING';
+export const CLEAR_ERROR = 'CLEAR_ERROR';
 
 export const fetchCurrentDayWeather = (queries) => (dispatch) => {
   WeatherApi.getCurrentDayWeather({ ...queries })
@@ -32,7 +32,7 @@ export const fetchFullWeather = (queries) => (dispatch) => {
             payload: weatherItem.value,
           });
       } else if (weatherItem.status === 'rejected') {
-        dispatch(showError(weatherItem.reason));
+        dispatch(showError(weatherItem.reason.toString()));
       }
     }))
     .finally(() => dispatch(finishLoading()));
@@ -44,3 +44,5 @@ export const showError = (errorMessage) => ({
 });
 
 export const finishLoading = () => ({ type: FINISH_LOADING });
+
+export const clearError = () => ({ type: CLEAR_ERROR });
