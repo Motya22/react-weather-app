@@ -29,7 +29,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --max-warnings=0 --ext=jsx --ext=js ./src --cache=true --cache-location ./_cache/",
-    "lint:scss": "stylelint ./src/**/*.scss --cache --max-warnings=0 --syntax=scss --cache-location=./_cache/"
+    "lint:scss": "stylelint ./src/**/*.scss --cache --max-warnings=0 --syntax=scss --cache-location=./_cache/",
+    "deploy-production": "react-scripts build && scp -r ./build/* motya@188.166.117.201:/var/www/fancyweather.xyz/html"
   },
   "eslintConfig": {
     "extends": [
